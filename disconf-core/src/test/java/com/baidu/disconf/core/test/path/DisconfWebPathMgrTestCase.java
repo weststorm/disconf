@@ -35,11 +35,11 @@ public class DisconfWebPathMgrTestCase extends BaseCoreTestCase {
         String fileUrl =
             DisconfWebPathMgr.getRemoteUrlParameter("test", "app", "version", "env", "key", DisConfigTypeEnum.FILE);
         System.out.println(fileUrl);
-        Assert.assertEquals("test/file?app=app&env=env&type=0&key=key&version=version", fileUrl);
+        Assert.assertEquals("test/file?app=app&env=env&type=0&version=version&key=key", fileUrl);
 
         String itemUrl =
             DisconfWebPathMgr.getRemoteUrlParameter("test", "app", "version", "env", "key", DisConfigTypeEnum.ITEM);
         System.out.println(fileUrl);
-        Assert.assertEquals("test/item?app=app&env=env&type=1&key=key&version=version", itemUrl);
+        Assert.assertEquals("test/item?app=app&env=env&type=1&version=version&key=key", itemUrl);
     }
 }

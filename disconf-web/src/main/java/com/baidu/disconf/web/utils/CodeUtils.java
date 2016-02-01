@@ -24,7 +24,7 @@ public class CodeUtils {
 
         char[] myBuffer = inStr.toCharArray();
 
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < inStr.length(); i++) {
             Character.UnicodeBlock ub = Character.UnicodeBlock.of(myBuffer[i]);
             if (ub == Character.UnicodeBlock.BASIC_LATIN) {
@@ -56,7 +56,7 @@ public class CodeUtils {
     public static String unicodeToUtf8(String theString) {
         char aChar;
         int len = theString.length();
-        StringBuffer outBuffer = new StringBuffer(len);
+        StringBuilder outBuffer = new StringBuilder(len);
         for (int x = 0; x < len; ) {
             aChar = theString.charAt(x++);
             if (aChar == '\\') {

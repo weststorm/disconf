@@ -146,10 +146,7 @@ public class ReflectionScanStatic implements ScanStaticStrategy {
         //
         // 最后的校验
         //
-        Iterator<Class<?>> iterator = disconfFileItemMap.keySet().iterator();
-        while (iterator.hasNext()) {
-
-            Class<?> classFile = iterator.next();
+        for (Class<?> classFile : disconfFileItemMap.keySet()) {
 
             // 校验是否所有配置文件都含有配置
             if (disconfFileItemMap.get(classFile).isEmpty()) {

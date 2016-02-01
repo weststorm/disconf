@@ -26,10 +26,7 @@ public class ListInValidator implements ConstraintValidator<ListInConstraint, In
     @Override
     public boolean isValid(Integer value, ConstraintValidatorContext context) {
 
-        if (value == null) {
-            return false;
-        }
+        return value != null && allowIntegerList.contains(value);
 
-        return allowIntegerList.contains(value);
     }
 }

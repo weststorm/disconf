@@ -56,9 +56,9 @@ public class LogMailBean {
      */
     public void sendLogExceptionEmail(String message, Throwable e) {
 
-        StringBuffer titleBuffer = new StringBuffer();
-        StringBuffer logInfo = new StringBuffer();
-        StringBuffer mailInfo = new StringBuffer();
+        StringBuilder titleBuffer = new StringBuilder();
+        StringBuilder logInfo = new StringBuilder();
+        StringBuilder mailInfo = new StringBuilder();
 
         //
         // 确定 标题
@@ -66,7 +66,7 @@ public class LogMailBean {
         Visitor visitor = ThreadContext.getSessionVisitor();
 
         if (null != visitor) {
-            titleBuffer.append("Current Login UcId: " + visitor.getId());
+            titleBuffer.append("Current Login UcId: ").append(visitor.getId());
             titleBuffer.append(" ");
         }
 
@@ -128,7 +128,7 @@ public class LogMailBean {
         try {
 
             InetAddress addr = InetAddress.getLocalHost();
-            localName += addr.getHostName().toString();
+            localName += addr.getHostName();
 
         } catch (UnknownHostException e) {
 
@@ -137,7 +137,7 @@ public class LogMailBean {
 
         String mailTitle = localName + "/" + getSystemDate();
 
-        int len = 0;
+        int len;
         int lenLimit = ALARM_MAIL_TITLE_LENGTH;
         if (title != null) {
             len = title.length();
@@ -147,9 +147,8 @@ public class LogMailBean {
             mailTitle += title.substring(0, len);
         }
 
-        String mailTo = toEmail;
         String mailFrom = emailProperties.getFromEmail();
-        String[] mailToList = mailTo.split(";");
+        String[] mailToList = toEmail.split(";");
 
         if (content == null) {
 
@@ -173,11 +172,11 @@ public class LogMailBean {
      */
     private String getExceptionInfo(Throwable e, String systemDate, String newLineToken, String tabToken) {
 
-        StringBuffer info = new StringBuffer();
+        StringBuilder info = new StringBuilder();
         info.append(systemDate);
         info.append(tabToken);
         info.append("cause by: ");
-        info.append(e.getClass().getName() + "--");
+        info.append(e.getClass().getName()).append("--")
         info.append(e.getMessage());
         info.append(newLineToken);
         for (StackTraceElement stackTraceElement : e.getStackTrace()) {
@@ -187,7 +186,7 @@ public class LogMailBean {
             info.append(newLineToken);
         }
         if (null != e.getCause() && e.getCause() instanceof Exception) {
-            info.append(getExceptionInfo((Exception) e.getCause(), systemDate, newLineToken, tabToken));
+            info.append(getExceptionInfo(e.getCause(), systemDate, newLineToken, tabToken));
         }
         return info.toString();
     }
@@ -206,7 +205,7 @@ public class LogMailBean {
         try {
 
             InetAddress addr = InetAddress.getLocalHost();
-            localName = addr.getHostName().toString();
+            localName = addr.getHostName();
 
         } catch (UnknownHostException e) {
 
@@ -215,7 +214,7 @@ public class LogMailBean {
 
         String mailTitle = localName + " /" + ALARM_MAIL_TITLE + "/" + getSystemDate();
 
-        int len = 0;
+        int len;
         int lenLimit = ALARM_MAIL_TITLE_LENGTH;
         if (title != null) {
             len = title.length();

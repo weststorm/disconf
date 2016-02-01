@@ -124,7 +124,7 @@ public class BeanUtils {
                         }
                         for (Object value : valueList) {
                             Object cloneValue = null;
-                            if (value.getClass().getName().indexOf(ENTITY_CLASS_PACKAGE) >= 0) {
+                            if (value.getClass().getName().contains(ENTITY_CLASS_PACKAGE)) {
                                 cloneValue = BeanUtils.getOneLayerClone(value);
                             } else {
                                 cloneValue = value;
@@ -207,14 +207,14 @@ public class BeanUtils {
             return null;
         }
         List targetList = new ArrayList();
-        for (int i = 0; i < sourceList.size(); i++) {
+        for (Object source : sourceList) {
             Object target = null;
-            Object source = sourceList.get(i);
             try {
                 Constructor con = source.getClass().getConstructor();
                 target = con.newInstance();
                 PropertyUtils.copyProperties(target, source);
-            } catch (Exception e) {
+            }
+            catch (Exception e) {
                 logger.error("clone object exception object class:" + source.getClass(), e);
             }
             targetList.add(target);

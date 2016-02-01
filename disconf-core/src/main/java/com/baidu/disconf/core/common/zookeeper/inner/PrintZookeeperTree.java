@@ -32,7 +32,7 @@ public class PrintZookeeperTree extends ConnectionWatcher {
 
         try {
 
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
 
             int pathLength = StringUtils.countMatches(groupName, "/");
             for (int i = 0; i < pathLength - 1; ++i) {

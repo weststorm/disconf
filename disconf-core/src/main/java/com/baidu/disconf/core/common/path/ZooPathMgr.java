@@ -19,7 +19,7 @@ public class ZooPathMgr {
      */
     public static String getZooBaseUrl(String urlPrefix, String app, String env, String version) {
 
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         sb.append(urlPrefix);
 
         sb.append(Constants.SEP_STRING);

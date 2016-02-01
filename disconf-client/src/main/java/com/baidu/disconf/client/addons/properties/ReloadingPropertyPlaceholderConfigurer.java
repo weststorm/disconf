@@ -70,7 +70,7 @@ public class ReloadingPropertyPlaceholderConfigurer extends DefaultPropertyPlace
 
         // replace reloading prefix and suffix by "normal" prefix and suffix.
         // remember all the "dynamic" placeholders encountered.
-        StringBuffer buf = new StringBuffer(strVal);
+        StringBuilder buf = new StringBuilder(strVal);
         int startIndex = strVal.indexOf(this.placeholderPrefix);
         while (startIndex != -1) {
             int endIndex = buf.toString().indexOf(this.placeholderSuffix, startIndex + this.placeholderPrefix.length());

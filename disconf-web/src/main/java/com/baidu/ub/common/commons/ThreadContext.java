@@ -82,10 +82,7 @@ public class ThreadContext {
      */
     public final static boolean contains(String key) {
         Map<String, Object> ctx = CTX_HOLDER.get();
-        if (ctx != null) {
-            return ctx.containsKey(key);
-        }
-        return false;
+        return ctx != null && ctx.containsKey(key);
     }
 
     /**

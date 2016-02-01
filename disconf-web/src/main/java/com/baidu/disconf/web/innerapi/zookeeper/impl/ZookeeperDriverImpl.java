@@ -264,7 +264,7 @@ public class ZookeeperDriverImpl implements ZooKeeperDriver, InitializingBean, D
             throws KeeperException, InterruptedException {
         try {
 
-            StringBuffer sb = new StringBuffer();
+            StringBuilder sb = new StringBuilder();
 
             int pathLength = StringUtils.countMatches(groupName, "/");
             for (int i = 0; i < pathLength - 2; ++i) {

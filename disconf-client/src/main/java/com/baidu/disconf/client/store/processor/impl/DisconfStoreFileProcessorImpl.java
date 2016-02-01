@@ -296,7 +296,7 @@ public class DisconfStoreFileProcessorImpl implements DisconfStoreProcessor {
     @Override
     public String confToString() {
 
-        StringBuffer sBuffer = new StringBuffer();
+        StringBuilder sBuffer = new StringBuilder();
         sBuffer.append("\n");
         Map<String, DisconfCenterFile> disMap = getInstance().getConfFileMap();
         for (String file : disMap.keySet()) {

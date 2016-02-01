@@ -510,11 +510,8 @@ public abstract class StringUtil {
      * @return 如果字符串<code>str</code>是否以字符<code>ch</code>结尾，则返回<code>true</code>
      */
     public static boolean endsWithChar(String str, char ch) {
-        if (StringUtils.isEmpty(str)) {
-            return false;
-        }
+        return !StringUtils.isEmpty(str) && str.charAt(str.length() - 1) == ch;
 
-        return str.charAt(str.length() - 1) == ch;
     }
 
     // ==========================================================================
@@ -549,11 +546,8 @@ public abstract class StringUtil {
      * @return 如果字符串<code>str</code>是否以字符<code>ch</code> 开头，则返回<code>true</code>
      */
     public static boolean startsWithChar(String str, char ch) {
-        if (StringUtils.isEmpty(str)) {
-            return false;
-        }
+        return !StringUtils.isEmpty(str) && str.charAt(0) == ch;
 
-        return str.charAt(0) == ch;
     }
 
     public static int indexOfChars(String string, String chars) {

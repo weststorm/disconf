@@ -31,7 +31,7 @@ public class DisconfWebPathMgr {
         // 配置文件或配置项
         parameterMap.put(Constants.TYPE, String.valueOf(disConfigTypeEnum.getType()));
 
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         sb.append(urlPrefix);
 
         if (disConfigTypeEnum.getType() == DisConfigTypeEnum.FILE.getType()) {

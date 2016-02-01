@@ -35,11 +35,8 @@ public final class OsUtil {
      */
     public static boolean makeDirs(final String filePath) {
         File f = new File(filePath);
-        if (!f.exists()) {
-            return f.mkdirs();
-        }
+        return f.exists() || f.mkdirs();
 
-        return true;
     }
 
     /**
@@ -77,7 +74,7 @@ public final class OsUtil {
 
         } else {
 
-            final StringBuffer sb = new StringBuffer();
+            final StringBuilder sb = new StringBuilder();
 
             for (final String pathElement : pathElements) {
 

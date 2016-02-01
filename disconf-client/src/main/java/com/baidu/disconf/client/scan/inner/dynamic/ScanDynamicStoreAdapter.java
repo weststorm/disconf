@@ -216,7 +216,7 @@ public class ScanDynamicStoreAdapter {
 
             } catch (Exception e) {
                 // 找不到回调对应的配置，这是用户配置 错误了
-                StringBuffer sb = new StringBuffer();
+                StringBuilder sb = new StringBuilder();
                 sb.append("cannot find " + disconfKey + "for: ");
                 for (IDisconfUpdate serClass : disconfUpdateServiceInverseIndexMap.get(disconfKey)) {
                     sb.append(serClass.toString() + "\t");

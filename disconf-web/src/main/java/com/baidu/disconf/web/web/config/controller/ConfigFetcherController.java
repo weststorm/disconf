@@ -99,7 +99,7 @@ public class ConfigFetcherController {
             hasError = true;
         }
 
-        if (hasError == false) {
+        if (!hasError) {
             try {
                 //
                 Config config = configFetchMgr

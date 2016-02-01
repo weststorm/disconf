@@ -9,7 +9,7 @@ import com.github.knightliao.apollo.db.bo.BaseObject;
 /**
  *
  */
-@Table(db = DB.DB_NAME, keyColumn = "role_res_id", name = "role_resource")
+@Table(db = DB.DB_NAME, keyColumn = Columns.ROLE_RES_ID, name = "role_resource")
 public class RoleResource extends BaseObject<Integer> {
 
     private static final long serialVersionUID = 1L;
@@ -17,13 +17,13 @@ public class RoleResource extends BaseObject<Integer> {
     @Column(value = Columns.ROLE_ID)
     private Integer roleId;
 
-    @Column(value = "url_pattern")
+    @Column(value = Columns.URL_PATTERN)
     private String urlPattern;
 
-    @Column(value = "url_description")
+    @Column(value = Columns.URL_DESCRIPTION)
     private String urlDescription;
 
-    @Column(value = "method_mask")
+    @Column(value = Columns.METHOD_MASK)
     private String methodMask;
 
     @Column(value = Columns.UPDATE_TIME)

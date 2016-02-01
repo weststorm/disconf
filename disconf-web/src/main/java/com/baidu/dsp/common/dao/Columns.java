@@ -19,10 +19,14 @@ public class Columns {
 
     public static final String VALUE = "value";
 
+    public static final String ID = "id";
     public static final String APP_ID = "app_id";
     public static final String ENV_ID = "env_id";
     public static final String CONFIG_ID = "config_id";
     public static final String USER_ID = "user_id";
+
+    public static final String OLD_VALUE = "old_value";
+    public static final String NEW_VALUE = "new_value";
 
     public static final String TYPE = "type";
 
@@ -36,6 +40,11 @@ public class Columns {
     public static final String OWNAPPS = "ownapps";
 
     public static final String ROLE_ID = "role_id";
+    public static final String ROLE_RES_ID = "role_res_id";
+    public static final String URL_PATTERN = "url_pattern";
+    public static final String URL_DESCRIPTION = "url_description";
+    public static final String METHOD_MASK = "method_mask";
+
 
     public static final class RoleColumns {
         public final static String ROLE_NAME = "role_name";

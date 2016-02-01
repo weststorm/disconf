@@ -9,7 +9,7 @@ import com.github.knightliao.apollo.db.bo.BaseObject;
 import lombok.Data;
 
 @Data
-@Table(db = DB.DB_NAME, name = "config_history", keyColumn = "id")
+@Table(db = DB.DB_NAME, name = "config_history", keyColumn = Columns.ID)
 public class ConfigHistory extends BaseObject<Long> {
 
     /**
@@ -21,13 +21,13 @@ public class ConfigHistory extends BaseObject<Long> {
     /**
      *
      */
-    @Column(value = "old_value")
+    @Column(value = Columns.OLD_VALUE)
     private String oldValue;
 
     /**
      *
      */
-    @Column(value = "new_value")
+    @Column(value = Columns.NEW_VALUE)
     private String newValue;
 
     /**

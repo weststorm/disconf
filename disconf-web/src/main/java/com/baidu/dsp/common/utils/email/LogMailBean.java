@@ -176,7 +176,7 @@ public class LogMailBean {
         info.append(systemDate);
         info.append(tabToken);
         info.append("cause by: ");
-        info.append(e.getClass().getName()).append("--")
+        info.append(e.getClass().getName()).append("--");
         info.append(e.getMessage());
         info.append(newLineToken);
         for (StackTraceElement stackTraceElement : e.getStackTrace()) {
